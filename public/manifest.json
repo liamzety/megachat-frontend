@@ -1,0 +1,20 @@
+{
+  "name": "MegaChat",
+  "short_name": "MegaChat",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "MegaChat description",
+  "icons": [
+    {
+      "src": "icons/logo48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/logo144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
