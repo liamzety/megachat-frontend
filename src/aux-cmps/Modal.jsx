@@ -1,12 +1,13 @@
 import React from "react";
 import { useState } from "react";
-
-export const Modal = ({ isOpen, title,children }) => {
-
+import { Text } from "./Text";
+export const Modal = ({ isOpen, title, children }) => {
   return isOpen ? (
     <div className="modal flex column">
-      <div className="header">{title}</div>
-        {children}
+      <Text type="h2" className="header">
+        {title}
+      </Text>
+      {children}
     </div>
   ) : (
     <></>

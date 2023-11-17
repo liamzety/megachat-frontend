@@ -1,12 +1,9 @@
-import React from 'react';
+import React from "react";
 
-
-export const Button = ({children, onClick}) => {
-
-
- return (
-  <button onClick={onClick} role='button' className='button'>
-    {children}
-  </button>
- )
-}
+export const Button = ({ children, className, onClick }) => {
+  return (
+    <button className={`button ${className}`} onClick={onClick} role="button">
+      {children}
+    </button>
+  );
+};

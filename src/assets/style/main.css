@@ -108,16 +108,6 @@
   cursor: pointer;
 }
 
-.btn-cta {
-  width: 150px;
-  height: 50px;
-  border: #ffff 3px solid;
-  font-size: 18px;
-  color: #ffff;
-  font-weight: 600;
-  border-radius: 25px;
-  background-color: transparent;
-}
 
 * {
   -webkit-box-sizing: border-box;

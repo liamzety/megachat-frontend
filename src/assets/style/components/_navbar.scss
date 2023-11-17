@@ -1,0 +1,31 @@
+.navbar {
+  margin-bottom: 12px;
+  position: sticky;
+  height: 60px;
+  width: 100%;
+  top: 0;
+  background-color: $colorNavbar;
+  padding: 0 24px;
+  box-shadow: $boxShadow;
+  &-left {
+    gap: 16px;
+    margin-right: auto;
+  }
+  &-right {
+    gap: 16px;
+    margin-left: auto;
+  }
+  &-anchor {
+    color: $colorAnchor;
+    cursor: pointer;
+    font-weight: 700;
+
+    &:hover {
+      color: darken($colorAnchor, 20%);
+      transition: 0.6s;
+    }
+  }
+  &-username {
+    font-size: calc(#{$fontSize} + 6px);
+  }
+}

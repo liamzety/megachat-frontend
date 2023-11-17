@@ -6,21 +6,21 @@ export const CreateRoomModal = ({ toggleModal, onCreateRoom }) => {
   const [roomDetails, setRoomDetails] = useState({
     name: "",
   });
-  return  (
+  return (
     <div className="create-room-modal">
-        <input
-          type="text"
-          value={roomDetails.name}
-          onChange={({ target: { value } }) =>
-            setRoomDetails({ ...roomDetails, name: value })
-          }
-        />
-        <div className="flex column">
-          <Button  onClick={() => onCreateRoom(roomDetails)}>
-            Confirm
-          </Button>
-          <Button onClick={toggleModal}>Close</Button>
-        </div>
+      <input
+        type="text"
+        value={roomDetails.name}
+        onChange={({ target: { value } }) =>
+          setRoomDetails({ ...roomDetails, name: value })
+        }
+      />
+      <div className="create-room-modal-footer flex column">
+        <Button className="cta" onClick={() => onCreateRoom(roomDetails)}>
+          Confirm
+        </Button>
+        <Button onClick={toggleModal}>Close</Button>
       </div>
-  ) ;
+    </div>
+  );
 };

@@ -7,11 +7,11 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: $fontSize;
 }
 
 body {
-  color: #bbbb;
+  background-color: $colorBg;
 }
 
 ul {
@@ -33,7 +33,13 @@ a {
     filter: brightness(75%);
   }
 }
-
+input {
+  border: none;
+  border-radius: $borderRadius;
+  padding: 6px;
+  color: $colorTxtB;
+  background: $colorInputBg;
+}
 button {
   cursor: pointer;
   transition: 0.3s;
@@ -58,7 +64,7 @@ button {
   padding: 5px 10px;
   color: #f1f1f1;
   background-color: rgba(#333333, 0.65);
-  border-radius: 5px;
+  border-radius: $borderRadius;
   animation: title-animation 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   z-index: 999;
 }

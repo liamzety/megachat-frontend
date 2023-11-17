@@ -1,26 +1,29 @@
 .modal {
-    position: fixed;
-    inset: 0;
-    width: 50%;
-    height: 50%;
-    margin: auto;
-    border-radius: 6px;
-    box-shadow: 10px;
-    box-shadow: 0px 0px 6px 0px #969696;
-    background-color: $colorSec;
-    .header {
-        padding: 16px;
-    }
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: 300px;
+  height: 50%;
+  max-height: 300px;
+  margin: auto;
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+  background-color: $colorNavbar;
+  padding: 16px;
+  .header {
+    margin-bottom: 12px;
+    color: $colorAnchor;
+  }
 
-    .body {
-        height: 100%;
-        width: 100%;
-        flex-direction: column;
-        padding: 16px;
-        gap: 4px;
+  .body {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    padding: 16px;
+    gap: 4px;
 
-        input {
-            margin-bottom: 16px;
-        }
+    input {
+      margin-bottom: 16px;
     }
+  }
 }

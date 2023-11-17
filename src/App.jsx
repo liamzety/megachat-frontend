@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./views/Home";
 import { Rooms } from "./views/Rooms";
 import { Room } from "./views/Room";
+import { Navbar } from "./cmps/Navbar";
 
 function App() {
   const routes = [
@@ -23,6 +24,7 @@ function App() {
   return (
     <main className="app">
       <Router>
+        <Navbar />
         <Routes>
           {routes.map((route) => (
             <Route

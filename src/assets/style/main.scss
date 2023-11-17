@@ -1,15 +1,17 @@
 // BASICS
-@import './basics/variables';
-@import './basics/helpers';
-@import './basics/base';
-@import './basics/typography';
-@import './basics/animations';
+@import "./basics/variables";
+@import "./basics/helpers";
+@import "./basics/base";
+@import "./basics/typography";
+@import "./basics/animations";
 // VIEWS
-@import './views/home';
+@import "./views/home";
 
 // COMPONENTS
-@import './components/button';
-@import './components/text';
+@import "./components/button";
+@import "./components/text";
+@import "./components/navbar";
+@import "./components/create-room-modal";
 
 //MODALS
-@import './modals/modal';
+@import "./modals/modal";
