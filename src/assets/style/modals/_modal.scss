@@ -10,9 +10,14 @@
   box-shadow: $boxShadow;
   background-color: $colorNavbar;
   padding: 16px;
+  z-index: 110;
+
   .header {
     margin-bottom: 12px;
-    color: $colorAnchor;
+
+    .text {
+      color: $colorAnchor;
+    }
   }
 
   .body {

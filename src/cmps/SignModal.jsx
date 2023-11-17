@@ -7,30 +7,32 @@ export const SignModal = ({ toggleModal, cb }) => {
     username: "",
     password: "",
   });
-  return  (
+  return (
     <div className="sign-modal">
-        <input
+      <input
         placeholder="Username"
-          type="text"
-          value={userDetails.username}
-          onChange={({ target: { value } }) =>
+        type="text"
+        value={userDetails.username}
+        onChange={({ target: { value } }) =>
           setUserDetails({ ...userDetails, username: value })
-          }
-        />
-        <input
+        }
+      />
+      <input
         placeholder="Password"
-          type="password"
-          value={userDetails.password}
-          onChange={({ target: { value } }) =>
+        type="password"
+        value={userDetails.password}
+        onChange={({ target: { value } }) =>
           setUserDetails({ ...userDetails, password: value })
-          }
-        />
-        <div className="flex column">
-          <Button onClick={() => cb(userDetails)}>
-           Confirm
-          </Button>
-          <Button onClick={toggleModal}>Close</Button>
-        </div>
+        }
+      />
+      <div className="sign-modal-footer flex ">
+        <Button className="btn-cta grow-1" onClick={() => cb(userDetails)}>
+          Confirm
+        </Button>
+        <Button className="grow-3" onClick={toggleModal}>
+          Close
+        </Button>
       </div>
-  ) ;
+    </div>
+  );
 };

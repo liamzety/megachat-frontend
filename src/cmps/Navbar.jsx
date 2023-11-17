@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "../aux-cmps/Button";
 import { Text } from "../aux-cmps/Text";
 import { Modal } from "../aux-cmps/Modal";
@@ -45,7 +45,7 @@ export const Navbar = ({}) => {
     closeModals();
 
     dispatch(createRoom(roomDetails));
-    directToRooms();
+    navigate("/rooms", { replace: true });
   };
   const onSignIn = (userDetails) => {
     closeModals();
@@ -61,10 +61,6 @@ export const Navbar = ({}) => {
     dispatch(logout());
   };
 
-  const directToRooms = () => {
-    navigate("/rooms", { replace: true });
-  };
-
   return (
     <>
       <div className="navbar flex">
@@ -73,9 +69,16 @@ export const Navbar = ({}) => {
             <div className="navbar-anchor" onClick={toggleCreateRoomModal}>
               Create Room
             </div>
-            <div className="navbar-anchor" onClick={directToRooms}>
+
+            <NavLink
+              end
+              to="/rooms"
+              className={({ isActive }) =>
+                "navbar-anchor" + (isActive ? " navbar-anchor-active" : "")
+              }
+            >
               Join Existing Rooms
-            </div>
+            </NavLink>
           </div>
         )}
         <div className="navbar-right flex center">

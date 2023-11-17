@@ -1,8 +1,13 @@
-.button {
+.btn {
   color: $colorBtnTxt;
   background-color: $colorBtnBg;
   border-radius: $borderRadius;
   padding: 8px;
   border: none;
   font-weight: 700;
+
+  &-cta {
+    color: $colorBtnTxtCta;
+    background-color: $colorBtnBgCta;
+  }
 }

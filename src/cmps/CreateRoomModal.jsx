@@ -15,11 +15,17 @@ export const CreateRoomModal = ({ toggleModal, onCreateRoom }) => {
           setRoomDetails({ ...roomDetails, name: value })
         }
       />
-      <div className="create-room-modal-footer flex column">
-        <Button className="cta" onClick={() => onCreateRoom(roomDetails)}>
+      <div className="create-room-modal-footer flex">
+        <Button
+          className="create-room-modal-footer-cta btn-cta grow-3"
+          onClick={() => onCreateRoom(roomDetails)}
+        >
           Confirm
         </Button>
-        <Button onClick={toggleModal}>Close</Button>
+
+        <Button className="grow-1" onClick={toggleModal}>
+          Close
+        </Button>
       </div>
     </div>
   );

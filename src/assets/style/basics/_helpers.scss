@@ -26,10 +26,15 @@
   justify-content: space-around;
 }
 
-.grow {
+.grow-1 {
   flex-grow: 1;
 }
-
+.grow-2 {
+  flex-grow: 2;
+}
+.grow-3 {
+  flex-grow: 3;
+}
 .relative {
   position: relative;
 }
@@ -42,9 +47,7 @@
   justify-content: center;
   align-items: center;
 }
-button.cta {
-  background: $colorBtnBgCta;
-}
+
 .p-x-15 {
   padding-right: 15px;
   padding-left: 15px;

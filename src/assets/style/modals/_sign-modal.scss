@@ -1,0 +1,11 @@
+.sign-modal {
+  display: flex;
+  gap: $box-gap;
+  flex-direction: column;
+  height: 100%;
+  &-footer {
+    margin-top: auto;
+    display: flex;
+    gap: $box-gap;
+  }
+}

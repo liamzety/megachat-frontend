@@ -37,15 +37,21 @@ input {
   border: none;
   border-radius: $borderRadius;
   padding: 6px;
-  color: $colorTxtB;
+  color: $colorTxtA;
   background: $colorInputBg;
+  transition: 0.3s;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0px 0px 3px 0px black;
+  }
 }
 button {
   cursor: pointer;
   transition: 0.3s;
 
   &:hover {
-    filter: brightness(75%);
+    filter: brightness(85%);
   }
 }
 
