@@ -1,12 +1,13 @@
 .navbar {
   margin-bottom: 12px;
   position: sticky;
-  height: 60px;
+  height: $navHeight;
   width: 100%;
   top: 0;
   background-color: $colorNavbar;
   padding: 0 24px;
   box-shadow: $boxShadow;
+
   &-left {
     gap: 16px;
     margin-right: auto;

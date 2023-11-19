@@ -1,23 +1,17 @@
 import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "./views/Home";
-import { Rooms } from "./views/Rooms";
-import { Room } from "./views/Room";
+import { Chats } from "./views/Chats";
 import { Navbar } from "./cmps/Navbar";
 
 function App() {
   const routes = [
     {
       path: "/",
-      component: <Home />,
+      component: <Chats />,
     },
     {
-      path: "/rooms",
-      component: <Rooms />,
-    },
-    {
-      path: "/rooms/:roomId",
-      component: <Room />,
+      path: "/:chatId",
+      component: <Chats />,
     },
   ];
 

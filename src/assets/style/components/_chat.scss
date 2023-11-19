@@ -1,0 +1,94 @@
+.chats {
+  height: calc(100% - (#{$navHeight} + 12px));
+
+  &-container {
+    width: calc(100% - 48px);
+    height: 95%;
+    margin: auto;
+    box-shadow: $boxShadow;
+    background: $colorInputBg;
+  }
+
+  &-list-container {
+    max-height: 100%;
+    width: 200px;
+    overflow: auto;
+  }
+  &-search-container {
+    padding: 6px;
+  }
+  &-search {
+    background-color: $colorInputBgB;
+    width: 100%;
+  }
+}
+
+.chat {
+  width: 100%;
+  &-container {
+    width: 100%;
+    background-color: $colorChat;
+  }
+  &-header {
+    display: flex;
+    align-items: center;
+    height: 41px;
+    padding: 6px 24px;
+    background: $colorInputBg;
+    border-left: 1px solid $colorChat;
+  }
+  &-footer {
+    padding: 8px;
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      height: 50px;
+      border-radius: $borderRadius 0 0 $borderRadius;
+    }
+    &-sendbtn {
+      width: 50px;
+      height: 50px;
+      border-radius: 0 $borderRadius $borderRadius 0;
+    }
+  }
+  &-preview {
+    padding: 6px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    &.active {
+      background-color: $colorChat;
+    }
+    &:hover {
+      background-color: $colorChat;
+    }
+  }
+  &-msgs-list {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 24px;
+    gap: 8px;
+    overflow: auto;
+  }
+
+  &-msg-preview {
+    display: flex;
+    flex-direction: column;
+    background-color: $colorChatPreview;
+    padding: 6px;
+    border-radius: $borderRadius;
+    align-items: center;
+    &-value {
+      margin-right: auto;
+    }
+    &-timestamp {
+      margin-left: auto;
+    }
+  }
+}

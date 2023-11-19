@@ -5,20 +5,18 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "../aux-cmps/Button";
 import { Text } from "../aux-cmps/Text";
 import { Modal } from "../aux-cmps/Modal";
-import { CreateRoomModal } from "./CreateRoomModal";
+import { CreateChatModal } from "./CreateChatModal";
 import { SignModal } from "./SignModal";
-import { createRoom } from "../store/actions/roomActions";
 import { loadUsers, login, logout, signUp } from "../store/actions/userActions";
 import { useEffect } from "react";
+import { CreateChat } from "./CreateChat";
 
 export const Navbar = ({}) => {
-  const [isRoomModalOpen, setIsRoomModalOpen] = useState(false);
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
 
   const { loggedUser } = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   //TODO: remove later
   const { users, msg } = useSelector((state) => state.userReducer);
@@ -28,25 +26,17 @@ export const Navbar = ({}) => {
   }, []);
 
   const closeModals = () => {
-    setIsRoomModalOpen(false);
     setIsSignInModalOpen(false);
     setIsSignUpModalOpen(false);
   };
-  const toggleCreateRoomModal = () => {
-    setIsRoomModalOpen(!isRoomModalOpen);
-  };
+
   const toggleSignInModal = () => {
     setIsSignInModalOpen(!isSignInModalOpen);
   };
   const toggleSignUpModal = () => {
     setIsSignUpModalOpen(!isSignUpModalOpen);
   };
-  const onCreateRoom = (roomDetails) => {
-    closeModals();
 
-    dispatch(createRoom(roomDetails));
-    navigate("/rooms", { replace: true });
-  };
   const onSignIn = (userDetails) => {
     closeModals();
 
@@ -66,19 +56,9 @@ export const Navbar = ({}) => {
       <div className="navbar flex">
         {!!loggedUser && (
           <div className="navbar-left flex center">
-            <div className="navbar-anchor" onClick={toggleCreateRoomModal}>
-              Create Room
-            </div>
-
-            <NavLink
-              end
-              to="/rooms"
-              className={({ isActive }) =>
-                "navbar-anchor" + (isActive ? " navbar-anchor-active" : "")
-              }
-            >
-              Join Existing Rooms
-            </NavLink>
+            <CreateChat>
+              <div className="navbar-anchor">Create Chat</div>
+            </CreateChat>
           </div>
         )}
         <div className="navbar-right flex center">
@@ -103,15 +83,6 @@ export const Navbar = ({}) => {
           )}
         </div>
       </div>
-
-      <Modal isOpen={isRoomModalOpen} title="Room Details">
-        <CreateRoomModal
-          onCreateRoom={(roomDetails) => {
-            onCreateRoom(roomDetails);
-          }}
-          toggleModal={toggleCreateRoomModal}
-        />
-      </Modal>
 
       <Modal isOpen={isSignInModalOpen} title="Sign in">
         <SignModal

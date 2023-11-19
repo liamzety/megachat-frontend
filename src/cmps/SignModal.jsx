@@ -26,10 +26,10 @@ export const SignModal = ({ toggleModal, cb }) => {
         }
       />
       <div className="sign-modal-footer flex ">
-        <Button className="btn-cta grow-1" onClick={() => cb(userDetails)}>
+        <Button className="btn-cta grow-3" onClick={() => cb(userDetails)}>
           Confirm
         </Button>
-        <Button className="grow-3" onClick={toggleModal}>
+        <Button className="grow-1" onClick={toggleModal}>
           Close
         </Button>
       </div>

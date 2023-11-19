@@ -30,7 +30,6 @@ export function signUp(user) {
   return async (dispatch) => {
     try {
       const signedUser = await authService.signUp(user);
-      console.log("signedUser", signedUser);
       dispatch({ type: "LOG_USER", user: signedUser });
       return user;
     } catch (err) {

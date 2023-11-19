@@ -1,15 +1,19 @@
 //color
-$colorBg: #ed7d31;
+$colorBg: #dce8e7;
 $colorTxtA: #6c5f5b;
 $colorTxtB: #f6f1ee;
-$colorNavbar: #4f4a45;
+$colorNavbar: #31a095;
 $colorBtnBg: #6c5f5b;
 $colorBtnBgCta: #f6f1ee;
 $colorBtnTxt: #f6f1ee;
-$colorBtnTxtCta: #4f4a45;
+$colorBtnTxtCta: #31a095;
 $colorAnchor: #f6f1ee;
-$colorAnchorActive: #ed7d31;
+$colorAnchorActive: #dce8e7;
+$colorAnchorActive: #dce8e7;
 $colorInputBg: #f6f1ee;
+$colorInputBgB: #e8e8e8;
+$colorChat: $colorInputBgB;
+$colorChatPreview: #f6f1ee;
 
 //font
 $fontSize: 14px;
@@ -21,4 +25,7 @@ $boxShadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.288);
 $borderRadius: 6px;
 
 //gap
-$box-gap: 6px;
+$boxGap: 6px;
+
+//nav
+$navHeight: 30px;

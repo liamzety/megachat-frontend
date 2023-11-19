@@ -12,6 +12,10 @@ html {
 
 body {
   background-color: $colorBg;
+  height: 100vh;
+}
+.app {
+  height: 100vh;
 }
 
 ul {
@@ -40,10 +44,12 @@ input {
   color: $colorTxtA;
   background: $colorInputBg;
   transition: 0.3s;
-
+  &::placeholder {
+    color: rgba($colorTxtA, 0.4);
+  }
   &:hover,
   &:focus {
-    box-shadow: inset 0px 0px 3px 0px black;
+    box-shadow: inset 0px 0px 3px 0px #00000021;
   }
 }
 button {

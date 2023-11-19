@@ -2,23 +2,23 @@ import React from "react";
 import { Button } from "../aux-cmps/Button";
 import { useState } from "react";
 
-export const CreateRoomModal = ({ toggleModal, onCreateRoom }) => {
-  const [roomDetails, setRoomDetails] = useState({
+export const CreateChatModal = ({ toggleModal, onCreateChat }) => {
+  const [chatDetails, setChatDetails] = useState({
     name: "",
   });
   return (
-    <div className="create-room-modal">
+    <div className="create-chat-modal">
       <input
         type="text"
-        value={roomDetails.name}
+        value={chatDetails.name}
         onChange={({ target: { value } }) =>
-          setRoomDetails({ ...roomDetails, name: value })
+          setChatDetails({ ...chatDetails, name: value })
         }
       />
-      <div className="create-room-modal-footer flex">
+      <div className="create-chat-modal-footer flex">
         <Button
-          className="create-room-modal-footer-cta btn-cta grow-3"
-          onClick={() => onCreateRoom(roomDetails)}
+          className="create-chat-modal-footer-cta btn-cta grow-3"
+          onClick={() => onCreateChat(chatDetails)}
         >
           Confirm
         </Button>
