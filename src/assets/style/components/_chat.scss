@@ -7,12 +7,21 @@
     margin: auto;
     box-shadow: $boxShadow;
     background: $colorInputBg;
+
+    @media (max-width: $mediaSm) {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   &-list-container {
     max-height: 100%;
     width: 200px;
     overflow: auto;
+    transition: 0.2s;
+    &-hide {
+      width: 0;
+    }
   }
   &-search-container {
     padding: 6px;
@@ -36,6 +45,22 @@
     padding: 6px 24px;
     background: $colorInputBg;
     border-left: 1px solid $colorChat;
+    gap: 24px;
+    &-chat-expand {
+      display: none;
+      cursor: pointer;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    @media (max-width: $mediaSm) {
+      &-chat-expand {
+        display: flex;
+      }
+    }
   }
   &-footer {
     padding: 8px;

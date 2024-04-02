@@ -10,7 +10,7 @@ function App() {
       component: <Chats />,
     },
     {
-      path: "/:chatId",
+      path: "/chat/:chatId",
       component: <Chats />,
     },
   ];

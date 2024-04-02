@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { debounce } from "lodash";
 import { Button } from "../aux-cmps/Button";
 import { createMsg } from "../store/actions/chatActions";
+import { IoIosChatboxes } from "react-icons/io";
 
 const _getFormattedTime = (timestamp) => {
   let h = new Date(timestamp).getHours();
@@ -20,7 +21,7 @@ const _getFormattedTime = (timestamp) => {
   return h + ":" + m;
 };
 
-export const Chat = () => {
+export const Chat = ({ onToggleChats }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -38,12 +39,13 @@ export const Chat = () => {
   const elChatInput = useRef(null);
 
   const loadChat = async () => {
+    console.log("here");
     const chat = await chatService.queryOne(chatId);
     setChat(chat);
   };
 
   useEffect(() => {
-    if (!loggedUser) {
+    if (!loggedUser || !chatId) {
       resetChat();
       return;
     }
@@ -113,6 +115,15 @@ export const Chat = () => {
         {chat ? (
           <>
             <div className="chat-header">
+              <div
+                onClick={() => {
+                  onToggleChats();
+                }}
+                className="chat-header-chat-expand"
+              >
+                <IoIosChatboxes />
+              </div>
+
               <Text type="h2" className="chat-header-title">
                 {chat.name}
               </Text>

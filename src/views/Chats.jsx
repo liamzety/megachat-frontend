@@ -9,9 +9,11 @@ import { Chat } from "./Chat";
 import { CreateChat } from "../cmps/CreateChat";
 import { Button } from "../aux-cmps/Button";
 import { useState } from "react";
+import { isMobile } from "react-device-detect";
 
 export function Chats() {
   const [chatSearch, setChatSearch] = useState("");
+  const [isChatsToggled, setIsChatsToggled] = useState(isMobile ? false : true);
   const { loggedUser } = useSelector((state) => state.userReducer);
   const { chats } = useSelector((state) => state.chatReducer);
   const dispatch = useDispatch();
@@ -26,17 +28,26 @@ export function Chats() {
       return;
     }
 
-    navigate(`/${chatId}`);
+    navigate(`/chat/${chatId}`);
   };
 
   const handleChatSearch = (val) => {
     setChatSearch(val);
   };
+
+  const onToggleChats = () => {
+    setIsChatsToggled(!isChatsToggled);
+  };
+
   return (
     <section className="chats">
       <div className="chats-container flex">
-        {!!chats.length ? (
-          <div className="chats-list-container flex column">
+        <div
+          className={`chats-list-container
+            ${!isChatsToggled ? "chats-list-container-hide" : ""}
+            flex column`}
+        >
+          {!!chats.length ? (
             <>
               <div className="chats-search-container">
                 <input
@@ -59,17 +70,16 @@ export function Chats() {
                   ))}
               </div>
             </>
-          </div>
-        ) : (
-          <div className="p-x-14 p-y-14">
-            <CreateChat>
-              <Button>Create Chat</Button>
-            </CreateChat>
-          </div>
-        )}
-
+          ) : (
+            <div className="p-x-14 p-y-14">
+              <CreateChat>
+                <Button>Create Chat</Button>
+              </CreateChat>
+            </div>
+          )}
+        </div>
         <>
-          <Chat />
+          <Chat onToggleChats={onToggleChats} />
         </>
       </div>
     </section>
